@@ -1,2 +1,2 @@
-# just-a-tarot
-預計規劃塔羅牌網站。
+# just-a-constellation
+預計規劃星座網站。
