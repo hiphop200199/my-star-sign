@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Prata', serif,"細明體_HKSCS";
+    color: aliceblue;
+}
+main{
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+   
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        background-image: url(./assets/night.jpg);
+        animation: blur 60s infinite linear,
+        fadein 3s linear forwards
+        ;
+    }
+    & button{
+        background-color: transparent;
+        border: 3px solid aliceblue;
+        border-radius: 100vmax;
+        padding: 0.5vmax;
+        font-size: 2.5vw;
+        user-select: none;
+        cursor: pointer;
+        filter: blur(1px);
+        transition: 1s;
+        &:hover{
+            filter: blur(0px);
+            background-color: rgba(240, 248, 255, 0.13);
+        }
+    }
+    & .star-sign-card{
+        position: absolute;
+        width: 15ch;
+        height: 10vh;
+    }
+}
+@keyframes blur {
+    0%,100%{
+        filter: blur(0px);
+    }
+    50%{
+        filter: blur(2px);
+    }
+}
+@keyframes fadein {
+    to{ opacity: 1;}
+}
