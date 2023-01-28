@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Prata", serif, "細明體_HKSCS";
   color: aliceblue;
+  scroll-behavior: smooth;
 }
 
 @media screen and (width >= 1920px) {
@@ -90,6 +91,9 @@
   main .star-sign-card.active {
     opacity: 1;
     scale: 1;
+  }
+  main .top-link {
+    display: none;
   }
   .star-sign-card:nth-of-type(1) {
     transform: rotate(30deg);
@@ -180,22 +184,13 @@
   main {
     width: 100vw;
     min-height: 100vh;
-    overflow: hidden;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-  }
-  main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
     opacity: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: bottom;
     background-image: url(./assets/night.jpg);
-    -webkit-animation: blur 60s infinite linear alternate, fadein 3s linear forwards, bgmove 60s infinite linear alternate;
-            animation: blur 60s infinite linear alternate, fadein 3s linear forwards, bgmove 60s infinite linear alternate;
+    -webkit-animation: fadein 3s linear forwards;
+            animation: fadein 3s linear forwards;
   }
   main button.music {
     font-size: 5vw;
@@ -215,7 +210,7 @@
     background-color: transparent;
     border: 3px solid aliceblue;
     border-radius: 1vmax;
-    padding: 0.5vmax;
+    padding: 0.1vmax;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -229,7 +224,7 @@
     background-color: rgba(240, 248, 255, 0.13);
   }
   main .star-sign-card {
-    margin: 1vmax;
+    margin: 3vmax;
     opacity: 0;
     scale: 0;
     width: 20vw;
@@ -251,6 +246,9 @@
   main .star-sign-card.active {
     opacity: 1;
     scale: 1;
+  }
+  main .top-link {
+    display: none;
   }
   .star-sign-card:nth-of-type(1) {
     transition-delay: 0.5s;
@@ -356,6 +354,26 @@
   main .star-sign-card.active {
     opacity: 1;
     scale: 1;
+  }
+  main .top-link {
+    position: relative;
+    left: 85vw;
+    bottom: 2vh;
+    margin: 1vmax;
+    font-size: 6vw;
+    background-color: transparent;
+    border: none;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-style: wavy;
+            text-decoration-style: wavy;
+    text-decoration-thickness: 2px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-animation: Btn 10s linear alternate infinite;
+            animation: Btn 10s linear alternate infinite;
   }
   .star-sign-card:nth-of-type(1) {
     transition-delay: 0.5s;

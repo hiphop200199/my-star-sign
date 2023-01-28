@@ -5,7 +5,9 @@
     box-sizing: border-box;
     font-family: 'Prata', serif,"細明體_HKSCS";
     color: aliceblue;
+    scroll-behavior: smooth;
 }
+
 @media screen and (width >= 1920px) {
     button.music{
         position: absolute;
@@ -83,6 +85,9 @@
             opacity: 1;
             scale: 1;
         }
+        & .top-link{
+            display: none;
+         }
     }
     
     @for $i from 1 through 12 {
@@ -93,28 +98,18 @@
       }
 }
 @media  screen and ( 640px <  width  < 1920px) {
-    
+   
     main{
+        
         width: 100vw;
         min-height: 100vh;
-        overflow: hidden;
-       display: flex;
-       justify-content: space-evenly;
-       flex-wrap: wrap;
-        &::before{
-            content: "";
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            z-index: -1;
-            background-size: cover;
-            background-position: bottom;
-            background-image: url(./assets/night.jpg);
-            animation: blur 60s infinite linear alternate,
-            fadein 3s linear forwards,
-            bgmove 60s infinite linear alternate
-            ;
-        }
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        opacity: 0;
+        background-image: url(./assets/night.jpg);
+        animation: fadein 3s linear forwards;
+        
          & button.music{
             font-size: 5vw;
             border: none;
@@ -130,7 +125,7 @@
             background-color: transparent;
             border: 3px solid aliceblue;
             border-radius: 1vmax;
-            padding: 0.5vmax;
+            padding: 0.1vmax;
             user-select: none;
             cursor: pointer;
             filter: blur(1px);
@@ -141,7 +136,7 @@
             }
         }
         & .star-sign-card{
-           margin: 1vmax;
+           margin: 3vmax;
             opacity: 0;
             scale: 0;
             width: 20vw;
@@ -161,6 +156,9 @@
         & .star-sign-card.active{
             opacity: 1;
             scale: 1;
+        }
+        & .top-link{
+           display: none;
         }
     }
     
@@ -226,6 +224,20 @@
             & .star-sign-card.active{
                opacity: 1;
                 scale: 1;
+            }
+            & .top-link{
+                position: relative;
+                left: 85vw;
+                bottom: 2vh;
+                margin: 1vmax;
+                font-size: 6vw;
+                background-color: transparent;
+                border: none;
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+                text-decoration-thickness: 2px;
+                user-select: none;
+                animation: Btn 10s linear alternate infinite;
             }
         }
         @for $i from 1 through 12 {

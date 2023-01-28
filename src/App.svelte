@@ -20,7 +20,7 @@
 
 <audio bind:this={audioElement} src={bgm} />
 <main>
-  <button on:click={showCard}>Star sign</button>
+  <button id="show-btn" on:click={showCard}>Star sign</button>
   <button class="music" on:click={playMusic}>&#119070;</button>
   <div class="star-sign-card">
     <p>
@@ -101,4 +101,5 @@
       ，講話心直口快，反而給人行事衝動或不負責任的印象，在工作上要注意才不會造成誤會。
     </p>
   </div>
+  <a class="top-link" href="#show-btn">top</a>
 </main>
