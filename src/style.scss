@@ -6,7 +6,7 @@
     font-family: 'Prata', serif,"細明體_HKSCS";
     color: aliceblue;
 }
-@media screen and (width >= 1920px) {
+@media screen and (width >= 1440px) {
     button.music{
         position: absolute;
         right: 1vw;
@@ -92,7 +92,7 @@
         .star-sign-card:nth-of-type(#{$i}) p { transform: rotate(calc(-360deg/12 *  $i  )); }
       }
 }
-@media  screen and ( 640px <  width  <= 1919px) {
+@media  screen and ( 640px <  width  < 1440px) {
     
     main{
         width: 100vw;
