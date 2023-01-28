@@ -8,7 +8,7 @@
   color: aliceblue;
 }
 
-@media screen and (width >= 1440px) {
+@media screen and (width >= 1920px) {
   button.music {
     position: absolute;
     right: 1vw;
@@ -176,7 +176,7 @@
     transform: rotate(-360deg);
   }
 }
-@media screen and (640px < width < 1440px) {
+@media screen and (640px < width < 1920px) {
   main {
     width: 100vw;
     min-height: 100vh;
