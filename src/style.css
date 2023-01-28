@@ -176,7 +176,7 @@
     transform: rotate(-360deg);
   }
 }
-@media screen and (640px < width < 1920px) {
+@media screen and (640px < width <= 1919px) {
   main {
     width: 100vw;
     min-height: 100vh;
