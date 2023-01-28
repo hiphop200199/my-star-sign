@@ -6,86 +6,236 @@
     font-family: 'Prata', serif,"細明體_HKSCS";
     color: aliceblue;
 }
-button.music{
-    position: absolute;
-    right: 1vw;
-    top: 1vh;
-    font-size: 3vw;
-    border: none;
-    background-color: transparent;
-    font-weight: 600;
-    z-index: 1;
-    user-select: none;
-    cursor:pointer;
-}
-main{
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
-   
-    &::before{
-        content: "";
+@media screen and (width >=1920px) {
+    button.music{
         position: absolute;
-        inset: 0;
-        opacity: 0;
-        z-index: -1;
-        background-size: cover;
-        background-position: bottom;
-        background-image: url(./assets/night.jpg);
-        animation: blur 60s infinite linear alternate,
-        fadein 3s linear forwards,
-        bgmove 60s infinite linear alternate
-        ;
-    }
-    & button{
+        right: 1vw;
+        top: 1vh;
+        font-size: 5vw;
+        border: none;
         background-color: transparent;
-        border: 3px solid aliceblue;
-        border-radius: 100vmax;
-        padding: 0.5vmax;
-        font-size: 2.5vw;
+        font-weight: 600;
+        z-index: 1;
         user-select: none;
-        cursor: pointer;
-        filter: blur(1px);
-        transition: 1s;
-        &:hover{
-            filter: blur(0px);
-            background-color: rgba(240, 248, 255, 0.13);
-        }
+        cursor:pointer;
     }
-    & .star-sign-card{
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        opacity: 0;
-        scale: 0;
-        /*border: 2px solid aliceblue;
-        box-shadow: 1px 1px 3px 3px aliceblue;*/
-        border-radius: 1vmax;
-        position: absolute;
-        left: 24vw;
-        width: 18ch;
-        transform-origin: 26vw;
-        transition: 1s;
-        height: 15vh;
-        padding: 0.5vmax;
-        user-select: none;
-        & p{
-            font-size: 1ch;
-            & span{
-                font-size: 2ch;
-                font-weight: 600;
+    main{
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+       
+        &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: bottom;
+            background-image: url(./assets/night.jpg);
+            animation: blur 60s infinite linear alternate,
+            fadein 3s linear forwards,
+            bgmove 60s infinite linear alternate
+            ;
+        }
+        & button{
+            background-color: transparent;
+            border: 3px solid aliceblue;
+            border-radius: 100vmax;
+            padding: 0.5vmax;
+            font-size: 2.5vw;
+            user-select: none;
+            cursor: pointer;
+            filter: blur(1px);
+            transition: 1s;
+            &:hover{
+                filter: blur(0px);
+                background-color: rgba(240, 248, 255, 0.13);
             }
         }
-        
+        & .star-sign-card{
+           margin: 1vmax;
+            opacity: 0;
+            scale: 0;
+            /*border: 2px solid aliceblue;
+            box-shadow: 1px 1px 3px 3px aliceblue;*/
+            position: absolute;
+            left: 23vw;
+            width: 11vw;
+            transform-origin: 27vw;
+            transition: 1s;
+            height: 10vh;
+            padding: 1vmax;
+            user-select: none;
+            & p{
+                font-size: 0.5vw;
+                & span{
+                    font-size: 1vw;
+                    font-weight: 600;
+                }
+            }
+            
+        }
+        & .star-sign-card.active{
+            opacity: 1;
+            scale: 1;
+        }
     }
-    & .star-sign-card.active{
-        opacity: 1;
-        scale: 1;
-    }
+    
+    @for $i from 1 through 12 {
+        .star-sign-card:nth-of-type(#{$i}) { transform: rotate(calc(360deg/12 *  $i  )); 
+        transition-delay: calc(0.5s * $i);
+        }
+        .star-sign-card:nth-of-type(#{$i}) p { transform: rotate(calc(-360deg/12 *  $i  )); }
+      }
 }
+@media  screen and ( 640px <  width  < 1920px) {
+    
+    main{
+        width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+       display: flex;
+       justify-content: space-evenly;
+       flex-wrap: wrap;
+        &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: bottom;
+            background-image: url(./assets/night.jpg);
+            animation: blur 60s infinite linear alternate,
+            fadein 3s linear forwards,
+            bgmove 60s infinite linear alternate
+            ;
+        }
+         & button.music{
+            font-size: 5vw;
+            border: none;
+            background-color: transparent;
+            font-weight: 600;
+            user-select: none;
+            cursor:pointer;
+            margin: 0.5vmax;
+        }
+        & button{
+            margin: 0.5vmax;
+            font-size: 5vw;
+            background-color: transparent;
+            border: 3px solid aliceblue;
+            border-radius: 1vmax;
+            padding: 0.5vmax;
+            user-select: none;
+            cursor: pointer;
+            filter: blur(1px);
+            transition: 1s;
+            &:hover{
+                filter: blur(0px);
+                background-color: rgba(240, 248, 255, 0.13);
+            }
+        }
+        & .star-sign-card{
+           margin: 1vmax;
+            opacity: 0;
+            scale: 0;
+            width: 20vw;
+            transition: 1s;
+            height: 20vh;
+            padding: 1vmax;
+            user-select: none;
+            & p{
+                font-size: 1vw;
+                & span{
+                    font-size: 2vw;
+                    font-weight: 600;
+                }
+            }
+            
+        }
+        & .star-sign-card.active{
+            opacity: 1;
+            scale: 1;
+        }
+    }
+    
+    @for $i from 1 through 12 {
+         .star-sign-card:nth-of-type(#{$i}){
+            transition-delay: calc(0.5s * $i);
+        }
+}
+   
+        
+        
+       
+      
+}
+  @media screen and (width <= 640px) {
+    
+        main{
+            width: 100vw;
+            min-height: 100vh;
+            background-image: url(./assets/swing-night.png);
+            animation: fadein 3s linear forwards; 
+           opacity: 0;
+            & button.music{
+                margin: 1vmax;
+                display: block;
+                font-size: 8vw;
+                background-color: transparent;
+                border: none;
+                border-block-end-color: aliceblue;
+                border-block-end-style: solid;
+                border-block-end-width: 2px;
+                user-select: none;
+                animation: Btn 10s linear alternate infinite;
+            }
+            & button{
+                margin: 1vmax;
+                font-size: 6vw;
+                background-color: transparent;
+                border: none;
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+                text-decoration-thickness: 2px;
+                user-select: none;
+                animation: Btn 10s linear alternate infinite;
+            }
+            & .star-sign-card{
+                position: static;
+                width: 100%;
+                opacity: 0;
+                scale: 0;
+                transition: 1s;
+                height: fit-content;
+                user-select: none;
+                margin: 0.5vmax;
+                padding: 2vmax;
+                & p{
+                    font-size: 5vw;
+                    & span{
+                        font-size: 8vw;
+                    }
+                }
+            }
+            & .star-sign-card.active{
+               opacity: 1;
+                scale: 1;
+            }
+        }
+        @for $i from 1 through 12 {
+            .star-sign-card:nth-of-type(#{$i}) {  
+            transition-delay: calc(0.5s * $i);
+            }
+          }
+}
+
+
 @keyframes blur {
     0%,100%{
         filter: blur(0px);
@@ -100,9 +250,15 @@ main{
 @keyframes bgmove {
     to{ background-position: top;}
 }
-@for $i from 1 through 12 {
-    .star-sign-card:nth-of-type(#{$i}) { transform: rotate(calc(360deg/12 *  $i  )); 
-    transition-delay: calc(0.5s * $i);
+@keyframes Btn {
+    0%,100%{
+        filter: blur(1px);
+        scale: 1;
+        translate: 0vw;
     }
-    .star-sign-card:nth-of-type(#{$i}) p { transform: rotate(calc(-360deg/12 *  $i  )); }
-  }
+    50%{
+        filter: blur(0px);
+        scale: 1.1;
+        translate: 1vw;
+    }
+}
