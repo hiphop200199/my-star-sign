@@ -107,9 +107,9 @@
         justify-content: space-evenly;
         flex-wrap: wrap;
         opacity: 0;
-        background-image: url(./assets/night.jpg);
+        background-image: url(./assets/cosmos.jpg);
         animation: fadein 3s linear forwards;
-        
+        overflow-x: hidden;
          & button.music{
             font-size: 5vw;
             border: none;
@@ -178,7 +178,7 @@
         main{
             width: 100vw;
             min-height: 100vh;
-            background-image: url(./assets/swing-night.png);
+            background-image: url(./assets/stars.jpg);
             animation: fadein 3s linear forwards; 
            opacity: 0;
             & button.music{
