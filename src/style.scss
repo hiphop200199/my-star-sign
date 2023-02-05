@@ -181,6 +181,7 @@
             background-image: url(./assets/stars.jpg);
             animation: fadein 3s linear forwards; 
            opacity: 0;
+           scroll-snap-type: y mandatory;/*y軸上做scroll-snap*/
             & button.music{
                 margin: 1vmax;
                 display: block;
@@ -214,6 +215,8 @@
                 user-select: none;
                 margin: 0.5vmax;
                 padding: 2vmax;
+                scroll-snap-align:start;/*停在元素的開始*/
+                scroll-snap-stop: always;/*不會一直滑過去*/
                 & p{
                     font-size: 5vw;
                     & span{

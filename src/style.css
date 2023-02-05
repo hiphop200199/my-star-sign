@@ -296,6 +296,8 @@
     -webkit-animation: fadein 3s linear forwards;
             animation: fadein 3s linear forwards;
     opacity: 0;
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory; /*y軸上做scroll-snap*/
   }
   main button.music {
     margin: 1vmax;
@@ -345,6 +347,8 @@
             user-select: none;
     margin: 0.5vmax;
     padding: 2vmax;
+    scroll-snap-align: start; /*停在元素的開始*/
+    scroll-snap-stop: always; /*不會一直滑過去*/
   }
   main .star-sign-card p {
     font-size: 5vw;
